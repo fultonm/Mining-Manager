@@ -1,0 +1,11 @@
+syntax: glob
+_[Rr]eSharper*
+[Bb]in/
+[Oo]bj/
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+[Mm]etric[Rr]esults/
+*.user
+*.DotSettings
+*.suo
+*.swp

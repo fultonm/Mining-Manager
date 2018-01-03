@@ -1,0 +1,8 @@
+﻿<Application x:Class="MineManager.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views/MiningManagerWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

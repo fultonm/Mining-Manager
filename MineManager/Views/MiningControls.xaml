@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="MineManager.Views.MiningControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModels="clr-namespace:MineManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="336"
+             d:DesignWidth="400"
+             d:DataContext="{d:DesignInstance ViewModels:Presenter}">
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
+    </UserControl.InputBindings>
+    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+        <StackPanel Orientation="Horizontal">
+            <Label Foreground="Black" HorizontalAlignment="Left" Margin="5,5,0,0">Mining Status:</Label>
+			<Label Foreground="{Binding MiningStatusColor, UpdateSourceTrigger=PropertyChanged}" Content="{Binding MiningStatus, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="5,5,0,0" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<Button Content="{Binding MiningButtonText, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding MiningButtonTextColor, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ManualMiningToggleCommand}" HorizontalAlignment="Left" Margin=" 10,0,0,0" VerticalAlignment="Top" Width="220" Height="29" />
+			<Label>Minimized mining: </Label>
+			<CheckBox IsChecked="{Binding MinimizedMining, UpdateSourceTrigger=PropertyChanged}" Height="15"></CheckBox>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+            <Label Foreground="Black" HorizontalAlignment="Left" Margin="5,5,0,0">Mining Bat File:</Label>
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="5,5,0,0"  TextWrapping="NoWrap" Width="160" Text="{Binding BatFilePath, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button HorizontalAlignment="Left" Margin="5,5,0,0" Command="{Binding FindBatFileCommand}">Browse...</Button>
+        </StackPanel>
+		<Label Foreground="BlueViolet" HorizontalAlignment="Left" Margin="5,5,0,0">This app will default to "runminer.bat" in same directory every time</Label>
+		<StackPanel Orientation="Horizontal">
+			<Label Margin="5,5,0,0" HorizontalAlignment="Right">ETH/USD:</Label>
+			<Label Margin="5,5,0,0" HorizontalAlignment="Right" Content="{Binding EthUsd, UpdateSourceTrigger=PropertyChanged}"></Label>
+		</StackPanel>
+		<Image Source="/images/bigwine.jpg" Margin="5,5,0,0" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="324"/>
+    </StackPanel>
+
+</UserControl>
